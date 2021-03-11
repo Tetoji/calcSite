@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">        <!--Google font 'Poppins'-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="teststyle.css">                        <!--Style CSS-->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <script type ="text/javascript" src="calc.js"></script>         <!--Javascript-->
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class = "navigation-bar">
+            <ul class = "navlist">
+                <li>
+                    <a id = "navlink" href="#">
+                    <div class = "rechner-liste">
+                        <div class="dropdown">
+                            <div class = "Ü1">
+                                Rechner
+                            </div>
+                            <div class="dropdown-content">
+                                <a href = "#quadratRechner">Quadrat Rechner</a>
+                                <a href = "#flaechenRechner">Flächenrechner</a>
+                                <a href = "#trigonometrieRechner">Trigonometrie</a>
+                                <a href = "#"></a>
+                                <a href = "#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class = "multipleCalculators">
+            
+            <!--Square-->
+            <div id = "quadratRechner">
+                Quadrat (x ²) Rechner:
+                <div class = "input">
+                    <form onsubmit="CalculateSquare(); return false">       <!--Function-->
+                        <input type ="text" id="InputValue" placeholder = "x">          <!--User input-->
+                        <input type ="submit" value="Calculate">            <!--Submit button-->
+                    </form>
+                </div>
+                <div class = "result">                                      <!--Result-->
+                    <div class = "ergebnis">Ergebnis: &nbsp</div>  
+                    <div id = "OutputValue"></div>      
+                </div>
+            </div>
+
+            <!--Square root-->
+            <div id = "squareRootRechner">
+                Wurzel Rechner:
+                <div class = "input">
+                    <form onsubmit="CalculateSquareRoot(); return false">       <!--Function-->
+                        <input type ="text" id="InputValueSquareRoot" placeholder = "x">                <!--User input-->
+                        <input type ="submit" value="Calculate">            <!--Submit button-->
+                    </form>
+                </div>
+                <div class = "result">                                      <!--Result-->
+                    <div class = "ergebnis">Ergebnis: &nbsp</div>  
+                    <div id = "OutputValueSquareRoot"></div>      
+                </div>
+            </div>
+
+            <!--Flaechen-->
+            <div id = "flaechenRechner">
+                Flaechen Rechner:
+                <div class = "input">
+                    <form onsubmit="CalculateArea(); return false">       <!--Function-->
+                        <div class = "maße">
+                            <div class = "maßeSelect1">
+                                <select class = "Metermaße1">
+                                    <option name="maß" value="mm²">Quadratmillimeter</option>
+                               
+                                    <option name="maß" value="cm²">Quadratzentimeter</option>
+                               
+                                    <option name="maß" value="dm²">Quadratdezimeter</option>
+                               
+                                    <option name="maß" value="m²" selected="selected">Quadratmeter</option>
+                               
+                                    <option name="maß" value="a">Ar</option>
+                               
+                                    <option name="maß" value="ha">Hektar</option>
+                               
+                                    <option name="maß" value="km²">Quadratkilometer</option>
+                                </select>
+                            </div>
+                            <div class="ZU">></div>
+                            <div class = "maßeSelect2">
+                                <select class = "Metermaße2">
+                                    <option name="maß" value="mm²">Quadratmillimeter</option>
+                               
+                                    <option name="maß" value="cm²">Quadratzentimeter</option>
+                               
+                                    <option name="maß" value="dm²">Quadratdezimeter</option>
+                               
+                                    <option name="maß" value="m²">Quadratmeter</option>
+                               
+                                    <option name="maß" value="a">Ar</option>
+                               
+                                    <option name="maß" value="ha">Hektar</option>
+                               
+                                    <option name="maß" value="km²" selected="selected" >Quadratkilometer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type ="text" id="AreaInputValueQuadratdezimeter">                <!--User input-->
+                        <input type ="submit" value="Calculate">            <!--Submit button-->
+                    </form>
+                </div>
+
+                <div class = "result"> 
+                    <div class = "ergebnis">Ergebnis: &nbsp</div>          <!--Result-->
+                    <div id = "AreaOutputValueQuadratdezimeter"></div>       
+                </div>
+            </div>
+
+            <!--Trigonometrie-->
+            <div id = "trigonometrieRechner">
+                Trigonometrie:
+                <div class = "input">
+                    <form onsubmit="CalculateTrigonometrie(); return false">       <!--Function-->
+                        <input type ="text" id="InputValueTrigonometrie" placeholder = "Winkel α">                <!--User input-->
+                        <input type ="submit" value="Calculate">            <!--Submit button-->
+                    </form>
+                </div>
+
+                <!--Result-->
+                <!--Sinus-->   
+                <div class = "result2">                                  
+                    <div class = "ergebnis">Sinus:  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+                    <div id = "OutputValueSinus"></div>
+                </div>
+
+                <!--Kosinus-->
+                <div class = "result2"> 
+                    <div class = "ergebnis">Kosinus:  &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+                    <div id = "OutputValueKosinus"></div>
+                </div>
+                    
+                <!--Tangens-->
+                <div class = "result2"> 
+                    <div class = "ergebnis">Tangens: &nbsp &nbsp &nbsp &nbsp</div>
+                    <div id = "OutputValueTangens"></div>
+                </div>
+
+                <!--Kosekans-->
+                <div class = "result2"> 
+                    <div class = "ergebnis">Kosekans: &nbsp &nbsp &nbsp</div>
+                    <div id = "OutputValueKosekans"></div>
+                </div>
+
+                <!--Sekans-->
+                <div class = "result2"> 
+                    <div class = "ergebnis">Sekans: &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+                    <div id = "OutputValueSekans"></div>
+                </div>
+
+                <!--Kotangens-->
+                <div class = "result2"> 
+                    <div class = "ergebnis">Kotangens: &nbsp &nbsp </div>
+                    <div id = "OutputValueKotangens"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
